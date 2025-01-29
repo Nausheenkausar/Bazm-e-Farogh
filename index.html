@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bazm-e-Farogh</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Bangers&family=Anton&display=swap" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('https://i.postimg.cc/ZqtQYHxy/bgforweb.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        header {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            font-weight: bold;
+            padding: 50px;
+            background: rgba(51, 61, 129, 0.8);
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        nav {
+            background: #222;
+            padding: 15px 0;
+        }
+
+        nav a {
+            font-size: 1.3rem;
+            color: rgb(249, 242, 242);
+            padding: 15px 30px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #9af8ff;
+        }
+
+        .event-category {
+            padding: 50px 20px;
+            background: rgba(49, 73, 167, 0.9);
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .event-category:hover {
+            transform: scale(1.03);
+        }
+
+        .event h2 {
+            font-size: 2.5rem;
+            color: #b7cbd7;
+            font-family: 'Bangers', cursive;
+            animation: popUp 1s ease-in-out;
+        }
+
+        .event p {
+            font-size: 1.2rem;
+            font-family: 'Anton', sans-serif;
+            animation: typewriter 3s steps(40) 1 normal both;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid #61bdff;
+            display: inline-block;
+        }
+
+        @keyframes popUp {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes typewriter {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        .event a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #457ff1;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .event a:hover {
+            background: #61bdff;
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .flower-animation {
+            position: absolute;
+            top: 50px;
+            left: 100px;
+            width: 70px;
+            animation: floatFlowers 5s infinite ease-in-out;
+        }
+
+        @keyframes floatFlowers {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Flexbox Layout for event containers */
+        .container-fluid {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            padding: 50px;
+        }
+
+        .event-container {
+            flex: 1 1 300px;
+            margin-right: 20px;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        /* Responsive Adjustments */
+        @media screen and (max-width: 768px) {
+            header {
+                font-size: 2rem;
+                padding: 30px;
+            }
+
+            .event h2 {
+                font-size: 1.8rem;
+            }
+
+            .event p {
+                font-size: 1rem;
+            }
+
+            nav a {
+                font-size: 1.1rem;
+                padding: 10px 20px;
+            }
+
+            .container-fluid {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .event-container {
+                width: 100%;
+                margin-right: 0;
+            }
+
+            footer {
+                font-size: 0.9rem;
+                padding: 15px;
+            }
+        }
+
+        /* Loading Spinner */
+        #loading-spinner {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/LOGO__1_-removebg-preview.png" alt="Bazm-e-Farogh Logo" class="header-logo">
+        Bazm-e-Farogh
+    </header>
+    
+    <nav class="text-center">
+        <a href="#cultural">Cultural Events</a>
+        <a href="#sports">Sports Events</a>
+        <a href="#literary">Literary Events</a>
+    </nav>
+    
+    <div class="text-center mt-4">
+        <img src="https://i.postimg.cc/Fs5BmDF5/AMU-logo-1.png" alt="Bazm-e-Farogh Logo" width="150">
+    </div>
+
+    <img src="https://i.postimg.cc/hPTN7NZt/floower-removebg-preview.png" alt="Floating Flower" class="flower-animation">
+
+    <!-- Event Sections -->
+    <div class="container-fluid">
+        <div class="event-container">
+            <section id="cultural" class="event-category event">
+                <h2>🌸 Cultural Events 🌸</h2>
+                <p>Dance, music, and more await you!</p>
+                <a href="https://forms.gle/ZxHtE812rpa1MSmW6">Register Now</a>
+            </section>
+
+            <section id="sports" class="event-category event">
+                <h2>⚽🏆 Sports Events 🏀⚽</h2>
+                <p>Join exciting tournaments and showcase your skills.</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdVqozVIVK4mQZuqm51C8GvBXLWti94e6b02JyUCZwkd859nA/viewform">Register Now</a>
+            </section>
+
+            <section id="literary" class="event-category event">
+                <h2>📚✒️ Literary Events 📖📚</h2>
+                <p>Express yourself through words and creativity.</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSciZa-ScJyIzd77F8kczpt0qa_Hh0fIwNDa0UILjf4owl6nJg/viewform?usp=sharing">Register Now</a>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Bazm-e-Farogh. All Rights Reserved. Designed by Nausheen Kausar</p>
+        <div>
+            <a href="#"><img src="https://i.postimg.cc/kMnm9NNx/facebook.png" alt="Facebook" width="30"></a>
+            <a href="#"><img src="https://i.postimg.cc/k4szV2BP/twitter.png" alt="Twitter" width="30"></a>
+            <a href="#"><img src="https://i.postimg.cc/3wXYPqpp/instagram.png" alt="Instagram" width="30"></a>
+        </div>
+    </footer>
+
+    <!-- Loading Spinner -->
+    <div id="loading-spinner">
+        <div class="lds-hourglass"></div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // Handle link clicks with loading spinner
+            $('.event a').on('click', function (event) {
+                event.preventDefault();  // Prevent immediate navigation
+                var link = $(this).attr('href');
+                
+                // Show the loading spinner
+                $('#loading-spinner').fadeIn(500);  // Add a fade-in effect for better visibility
+
+                // Delay the redirection to show the spinner
+                setTimeout(function () {
+                    window.location.href = link;
+                }, 1500);  // Adjust this timeout duration as needed
+            });
+
+            // Smooth scrolling for navigation links
+            $('nav a').on('click', function (event) {
+                event.preventDefault();
+                $('html, body').animate({
+                    scrollTop: $($(this).attr('href')).offset().top
+                }, 800);
+            });
+
+            // Fade-in effect for event categories when scrolled into view
+            $(window).on('scroll', function() {
+                $('.event-category').each(function() {
+                    if ($(this).offset().top < $(window).scrollTop() + $(window).height() - 100) {
+                        $(this).addClass('fade-in');
+                    }
+                });
+            });
+        });
+        $(document).ready(function () {
+    // Hide spinner on page load or when coming back from redirected page
+    $(window).on('load', function () {
+        $('.lds-hourglass').fadeOut();
+    });
+
+    // Navigation and spinner handling
+    $('.event a').on('click', function (event) {
+        event.preventDefault();  // Prevent immediate navigation
+        var link = $(this).attr('href');
+        
+        // Show the loading spinner
+        $('.lds-hourglass').fadeIn(500);  // Add a fade-in effect for better visibility
+
+        // Delay the redirection to show the spinner
+        setTimeout(function () {
+            window.location.href = link;
+        }, 1500);  // Adjust this timeout duration as needed
+    });
+
+    // Smooth scrolling for internal links
+    $('nav a').on('click', function(event) {
+        event.preventDefault();
+        $('html, body').animate({
+            scrollTop: $($(this).attr('href')).offset().top
+        }, 800);
+    });
+
+    // Fade-in effect for event categories as they come into view
+    $(window).on('scroll', function() {
+        $('.event-category').each(function() {
+            if ($(this).offset().top < $(window).scrollTop() + $(window).height() - 100) {
+                $(this).addClass('fade-in');
+            }
+        });
+    });
+});
+
+    </script>
+</body>
+</html>
+
+
