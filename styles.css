@@ -1,0 +1,84 @@
+.event a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+/* Title alignment fix for mobile */
+header {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 50px;
+    background: rgba(51, 61, 129, 0.8);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Adds space between the logo and text */
+    text-align: center; /* Ensures text is always centered */
+}
+
+.header-logo {
+    max-height: 80px; /* Adjust the size as needed */
+    width: auto;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        font-size: 2rem; /* Make font size smaller for mobile */
+        padding: 30px; /* Adjust padding for smaller screens */
+    }
+
+    .header-logo {
+        max-height: 60px; /* Adjust logo size */
+    }
+}
+
+/* Hide spinner on return from redirected page */
+.lds-hourglass {
+    display: none;
+}
+
+
+
+.lds-hourglass,
+.lds-hourglass:after {
+  box-sizing: border-box;
+}
+.lds-hourglass {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-hourglass:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 8px;
+  box-sizing: border-box;
+  border: 32px solid currentColor;
+  border-color: currentColor transparent currentColor transparent;
+  animation: lds-hourglass 1.2s infinite;
+}
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+
